@@ -1,0 +1,19 @@
+Preparing data for MVP...
+Reading file...
+Writing map into file
+inds: 768	markers:2359
+Preparation for GENOTYPE data is done within 0s 
+768 common individuals between phenotype and genotype. 
+Preparation for PHENOTYPE data is Done within 0s 
+Imputing...
+Impute Genotype File is done!
+Calculate KINSHIP using Vanraden method... 
+Deriving relationship matrix successfully 
+Preparation for Kinship matrix is done! 
+Eigen Decomposition on GRM 
+Deriving PCs successfully 
+Preparation for PC matrix is done! 
+MVP data prepration accomplished successfully!
+Preparation for Kinship matrix is done! 
+Preparation for Kinship matrix is done! 
+Preparation for PC matrix is done! 
