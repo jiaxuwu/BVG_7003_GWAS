@@ -1,14 +1,11 @@
+### Install and load the package required
 install.packages("rMVP")
 library(rMVP)
 
 ### Change working directory
 
 getwd()
-
-setwd("/Users/jiaxuwu/BVG_7003/GWAS/")
-
-dir.create("rMVP")
-setwd("/Users/jiaxuwu/BVG_7003/GWAS/rMVP")
+setwd("/path/to/mvp")
 
 
 ### Import genotypic and phenotypic data
@@ -25,11 +22,11 @@ MVP.Data(fileHMP="geno.hmp.txt",
 )
 
 
-###Kinship
+### Kinship
 MVP.Data.Kin("mvp.hmp.geno.desc", TRUE, mvp_prefix='mvp', out='mvp')
 Kinship <- attach.big.matrix("mvp.kin.desc")
 
-###PCA
+### PCA
 MVP.Data.PC("mvp.hmp.geno.desc", TRUE, out='mvp', pcs.keep=5)
 
 
@@ -39,7 +36,7 @@ phenotype <- read.table("mvp.hmp.phe",head=TRUE)
 map <- read.table("mvp.hmp.geno.map" , head = TRUE)
 
 
-####Run GWAS
+#### Run GWAS
 for(i in 2:ncol(phenotype)){
 imMVP <- MVP(
   phe=phenotype[, c(1, i)],
