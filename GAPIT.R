@@ -9,13 +9,13 @@ devtools::install_github("jiabowang/GAPIT3",force=TRUE)
 library(GAPIT3)
 
 ### Change working directory
-##getwd()
-setwd("/Users/jiaxuwu/BVG_7003/GWAS")
+getwd()
+setwd("/path/to/GAPIT/")
 
 
 #these lines of code install the actual GAPIT functions from the maize genetics website
-source("http://www.zzlab.net/GAPIT/GAPIT.library.R")
-source("http://www.zzlab.net/GAPIT/gapit_functions.txt")
+#source("http://www.zzlab.net/GAPIT/GAPIT.library.R")
+#source("http://www.zzlab.net/GAPIT/gapit_functions.txt")
 
 # Now we need to import the data files that we will be using for doing the analysis. Best to have
 # data saved in a text format. If you are using R studio you can import the files using the import 
@@ -29,8 +29,8 @@ source("http://www.zzlab.net/GAPIT/gapit_functions.txt")
 # If your data is in the HapMap format, you will only need the two files-the phenotypic and the hapmap
 # file. We will do this analysis first for the sake of time. 
 
-hapmap_geno<-read.table("geno.hmp.txt", head=F) # make sure header=F
-pheno<-read.table("pheno.txt",head=TRUE)
+hapmap_geno<-read.table(file.choose(), head=F) # make sure header=F
+pheno<-read.table(file.choose(), head=TRUE)
 
 #myCV <- read.table("Q3_ADMIX.txt", head=TRUE) ## K = 3 provided a good assessment of population structure.
 
@@ -57,7 +57,7 @@ which(is.na(pheno$protein)) # look for lines with missing data, there should be 
 # or you can do it manually using the something like the following
 dir.create("No-compression")
 
-setwd("/Users/jiaxuwu/BVG_7003/GWAS/No-compression/")
+setwd("/path/to/GAPIT/No-compression/")
 
 # first analysis where compression is not used in the model, this is done by setting the group.from 
 # and group.to equal to the size of your population and then setting the group.by to 1 so that each 
@@ -84,9 +84,9 @@ analysis1<-GAPIT(
 # if you want to use the default settings for compression, you do not need to specify anything.
 
 # change the directory where the output will be stored
-setwd("/Users/jiaxuwu/BVG_7003/GWAS")
+setwd("path/to/GAPIT/")
 dir.create("with-compression")
-setwd("/Users/jiaxuwu/BVG_7003/GWAS/with-compression/")
+setwd("path/to/GAPIT/with-compression/")
 
 analysis2<-GAPIT(
   Y=pheno,
@@ -115,9 +115,9 @@ analysis2<-GAPIT(
 # 12_30301	0.000599332
 
 # change to a location that works for you
-setwd("/Users/jiaxuwu/BVG_7003/GWAS")
+setwd("path/to/GAPIT/")
 dir.create("parameters")
-setwd("/Users/jiaxuwu/BVG_7003/GWAS/parameters/")
+setwd("path/to/GAPIT/parameters/")
 
 analysis3<-GAPIT(
   Y=pheno,
@@ -156,9 +156,9 @@ analysis3<-GAPIT(
 #### Multi-locus analysis
 # change to a location that works for you
 
-setwd("/Users/jiaxuwu/BVG_7003/GWAS")
+setwd("path/to/GAPIT/")
 dir.create("MLMM")
-setwd("/Users/jiaxuwu/BVG_7003/GWAS/MLMM/")
+setwd("path/to/GAPIT/MLMM/")
 analysis4 <- GAPIT(
   Y=pheno[,c(1,2)],
   G=hapmap_geno,
@@ -170,9 +170,9 @@ analysis4 <- GAPIT(
 
 
 # change to a location that works for you
-setwd("/Users/jiaxuwu/BVG_7003/GWAS")
+setwd("path/to/GAPIT/")
 dir.create("FarmCPU")
-setwd("/Users/jiaxuwu/BVG_7003/GWAS/FarmCPU/")
+setwd("path/to/GAPIT/FarmCPU/")
 analysis5 <- GAPIT(
   Y=pheno[,c(1,2)],
   G=hapmap_geno,
