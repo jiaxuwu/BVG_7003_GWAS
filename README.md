@@ -4,7 +4,7 @@ This page is created by Jiaxu Wu
 
 There are some R scripts for Genome Wide Association Study (GWAS) in in BVG_7003 @ Université Laval.
 
-**GWAS** is the 
+**GWAS** is a research approach used to identify genomic varients that are statistically associated with a risk for the particular trait. The methods involves surverying genomes of large numbers of individuals. 
 
 
 ## Requirement
