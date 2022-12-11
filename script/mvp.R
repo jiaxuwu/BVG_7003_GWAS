@@ -5,7 +5,7 @@ library(rMVP)
 ### Change working directory
 
 getwd()
-setwd("/path/to/mvp")
+setwd("/path/to/rMVP_result/")
 
 
 ### Import genotypic and phenotypic data
