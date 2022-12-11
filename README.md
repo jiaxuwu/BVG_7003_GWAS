@@ -26,11 +26,19 @@ We also attached test files for **GWAS** in the `data_input` folder, which inclu
 
 **rMVP** _version 1.0.0 --see https://github.com/xiaolei-lab/rMVP
 
+## Data
+
+In this project, the Haplotype Map file `geno.hmp.txt` consists of 11 columns plus the information associated with a single SNP of 768 genotypes. 
+
+The phenotype file `pheno.txt` includes the protein contains of 768 genotypes.
+
 ## GAPIT
 
-GAPIT (Genomic Association and Prediction Integrated Tool) 
-implemented a series of methods for GWAS. The GWAS models include General Linear Model (GLM), Mixed Linear Model (MLM or Q+K), Compressed MLM (CMLM), Enriched CMLM, SUPPER, Multiple Loci Mixed Model (MLMM), FarmCPU and BLINK. 
+**GAPIT (Genomic Association and Prediction Integrated Tool)** implemented a series of methods for GWAS. The GWAS models include General Linear Model (GLM), Mixed Linear Model (MLM or Q+K), Compressed MLM (CMLM), Enriched CMLM, SUPPER, Multiple Loci Mixed Model (MLMM), FarmCPU and BLINK. 
+
 GAPIT accepts multiple input data formats, including both numeric, hapmap, and PLINK genotype formats. GAPIT will produce comprehensive reports to interpret data and results in publication ready formats.
 
 ## rMVP
+
+**rMVP** is a Memory-efficient, Visualization-enhanced, and Parallel-accelerated Tool for GWAS.
 
