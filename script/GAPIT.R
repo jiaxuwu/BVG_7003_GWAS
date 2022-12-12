@@ -10,7 +10,7 @@ library(GAPIT3)
 
 ### Change working directory
 getwd()
-setwd("/path/to/GAPIT/")
+setwd("/path/to/GAPIT_result/")
 
 
 #these lines of code install the actual GAPIT functions from the maize genetics website
