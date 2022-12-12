@@ -56,7 +56,6 @@ which(is.na(pheno$protein)) # look for lines with missing data, there should be 
 
 # or you can do it manually using the something like the following
 dir.create("No-compression")
-
 setwd("/path/to/GAPIT/No-compression/")
 
 # first analysis where compression is not used in the model, this is done by setting the group.from 
@@ -159,13 +158,13 @@ analysis3<-GAPIT(
 setwd("path/to/GAPIT/")
 dir.create("MLMM")
 setwd("path/to/GAPIT/MLMM/")
+
 analysis4 <- GAPIT(
   Y=pheno[,c(1,2)],
   G=hapmap_geno,
   model="MLMM",
   PCA.total=3,
-  file.output=T
-)
+  file.output=T)
 
 
 
@@ -173,13 +172,13 @@ analysis4 <- GAPIT(
 setwd("path/to/GAPIT/")
 dir.create("FarmCPU")
 setwd("path/to/GAPIT/FarmCPU/")
+
 analysis5 <- GAPIT(
   Y=pheno[,c(1,2)],
   G=hapmap_geno,
   model="FarmCPU",
   PCA.total=3,
-  file.output=T
-)
+  file.output=T)
 
 
 
