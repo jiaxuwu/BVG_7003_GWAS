@@ -40,7 +40,102 @@ GAPIT accepts multiple input data formats, including both numeric, hapmap, and P
 
 ### Usage
 
+*Create a working directory `GAPIT_result` and copy `geno.hmp.txt` and `pheno.txt` to the folder before run this script.*
 
+#### Installation and load the package
+    
+    install.packages("devtools")
+    devtools::install_github("jiabowang/GAPIT3",force=TRUE)
+    library(GAPIT3)
+    
+#### Change the working directory
+
+    setwd("/path/to/GAPIT_result/")
+    
+#### Import the data
+
+    hapmap_geno<-read.table(file.choose(), head=F) # make sure header=F
+    pheno<-read.table(file.choose(), head=TRUE)
+    
+#### The first analysis (no compression)
+
+    dir.create("No-compression")
+    setwd("/path/to/GAPIT_result/No-compression/")
+    
+    analysis1<-GAPIT(
+      Y=pheno,
+      G=hapmap_geno,
+      SNP.impute="Major",
+      PCA.total=3,
+      Major.allele.zero=T,
+      group.from=768,
+      group.to=768,
+      group.by=1)
+      
+*The result output files were saved in the `No-compression` folder.*
+
+#### THe second analysis (with compression)
+
+    setwd("path/to/GAPIT_result/")
+    dir.create("with-compression")
+    setwd("path/to/GAPIT_result/with-compression/")
+    
+    analysis2<-GAPIT(
+      Y=pheno,
+      G=hapmap_geno,
+      SNP.impute="Major",
+      PCA.total=3,
+      Major.allele.zero=T)
+
+*The result output files were saved in the `with-compression` folder.*
+
+#### The third analysis (use different kinship clustering methods to group individuals based on their kinship)
+
+    setwd("path/to/GAPIT_result/")
+    dir.create("parameters")
+    setwd("path/to/GAPIT_result/parameters/")
+
+    analysis3<-GAPIT(
+      Y=pheno,
+      G=hapmap_geno,
+      SNP.impute="Major",
+      kinship.cluster=c("complete","ward"),
+      kinship.group=c("Mean","Max","Median"),
+      PCA.total=3,
+      Major.allele.zero=T,
+      Model.selection=T)
+      
+*The result output files were saved in the `parameters` folder.*
+
+#### The fourth analysis (Multiple Loci Mixied linear Model)
+
+    setwd("path/to/GAPIT_result/")
+    dir.create("MLMM")
+    setwd("path/to/GAPIT_result/MLMM/")
+    
+    analysis4 <- GAPIT(
+      Y=pheno[,c(1,2)],
+      G=hapmap_geno,
+      model="MLMM",
+      PCA.total=3,
+      file.output=T)
+      
+*The result output files were saved in the `MLMM` folder.*
+
+#### The fifth analysis (Fixed and random model Circulating Probability Unification)
+
+    setwd("path/to/GAPIT_result/")
+    dir.create("FarmCPU")
+    setwd("path/to/GAPIT_result/FarmCPU/")
+    
+    analysis5 <- GAPIT(
+      Y=pheno[,c(1,2)],
+      G=hapmap_geno,
+      model="FarmCPU",
+      PCA.total=3,
+      file.output=T)
+
+*The result output files were saved in the `FarmCPU` folder.*
 
 ## rMVP
 
@@ -48,7 +143,7 @@ GAPIT accepts multiple input data formats, including both numeric, hapmap, and P
 
 ### Usage
 
-Create a working directory `rMVP_result` and copy `geno.hmp.txt` and `pheno.txt` to the folder before run this script. 
+*Create a working directory `rMVP_result` and copy `geno.hmp.txt` and `pheno.txt` to the folder before run this script.*
 
 #### Installation and load the package
 
