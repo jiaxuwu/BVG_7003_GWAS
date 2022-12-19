@@ -74,7 +74,7 @@ GAPIT accepts multiple input data formats, including both numeric, hapmap, and P
       
 *The result output files were saved in the `No-compression` folder.*
 
-#### THe second analysis (with compression)
+#### The second analysis (with compression)
 
     setwd("path/to/GAPIT_result/")
     dir.create("with-compression")
