@@ -2,7 +2,7 @@
 
 This page is created by Jiaxu Wu
 
-There are some R scripts for Genome Wide Association Study (GWAS) in in BVG_7003 @ Université Laval.
+There are some R scripts for Genome Wide Association Study (GWAS) in BVG_7003 @ Université Laval.
 
 All the scripts used in this project were collected in `script` folder. The recoreds and results were saved in the `GAPIT_result` and `rMVP_result` folder.
 We also attached test files for **GWAS** in the `data_input` folder, which includes `geno.hmp.txt` and `pheno.txt`.
